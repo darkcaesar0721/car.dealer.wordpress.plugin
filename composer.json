@@ -1,0 +1,107 @@
+{
+	"name": "auto-listings/auto-listings",
+	"type": "wordpress-plugin",
+	"config": {
+		"prepend-autoloader": false,
+		"allow-plugins": {
+			"composer/installers": true
+		}
+	},
+	"repositories": [
+		{
+			"type": "git",
+			"url": "git@github.com:wpmetabox/mb-frontend-submission.git"
+		},
+		{
+			"type": "git",
+			"url": "git@github.com:wpmetabox/mb-settings-page.git"
+		},
+		{
+			"type": "git",
+			"url": "git@github.com:wpmetabox/meta-box-columns.git"
+		},
+		{
+			"type": "git",
+			"url": "git@github.com:wpmetabox/meta-box-geolocation.git"
+		},
+		{
+			"type": "git",
+			"url": "git@github.com:wpmetabox/meta-box-group.git"
+		},
+		{
+			"type": "git",
+			"url": "https://github.com/wpmetabox/support.git"
+		},
+		{
+			"type": "git",
+			"url": "git@github.com:elightup/plugin-updater.git"
+		},
+		{
+			"type": "git",
+			"url": "git@github.com:elightup/plugin-search.git"
+		}
+	],
+	"require": {
+		"meta-box/mb-frontend-submission": "^4",
+		"meta-box/mb-settings-page": "^2",
+		"meta-box/meta-box-columns": "^1",
+		"meta-box/meta-box-geolocation": "dev-master",
+		"meta-box/meta-box-group": "^1",
+		"elightup/plugin-updater": "dev-master",
+		"elightup/plugin-search": "dev-master"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"extra": {
+		"dev-files": {
+			"/": [
+				".git",
+				".github/",
+				".gitattributes",
+				".gitignore",
+				".editoconfig",
+				".vscode",
+				"LICENSE",
+				"*.md",
+				"phpcs.xml",
+				"test/",
+				"tests/"
+			],
+			"meta-box/*": [
+				".git",
+				".vscode",
+				".distignore",
+				".babelrc",
+				"webpack.config.js",
+				"*.lock",
+				"*.json",
+				"*.yml",
+				"*.txt",
+				"*.less",
+				"*.scss",
+				"*.po",
+				"demo.php",
+				"demo/",
+				"sass/",
+				"vendor/"
+			]
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"AutoListings\\": "src/"
+		},
+		"files": [
+			"src/functions.php",
+			"src/functions-conditionals.php",
+			"src/functions-enquiry.php",
+			"src/functions-formatting.php",
+			"src/functions-general.php",
+			"src/functions-listing.php",
+			"src/functions-sidebars.php",
+			"src/SearchForm/functions.php",
+			"src/Frontend/template-hooks.php",
+			"src/Frontend/template-tags.php"
+		]
+	}
+}

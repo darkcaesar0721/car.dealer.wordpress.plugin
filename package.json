@@ -1,0 +1,21 @@
+{
+	"private": true,
+	"scripts": {
+		"css:admin": "sass --no-source-map -s compressed assets/admin/css/search-form.scss assets/admin/css/search-form.css",
+		"css:frontend": "sass --no-source-map -s compressed assets/css/auto-listings.scss assets/css/auto-listings.scss",
+		"watch:admin": "sass --no-source-map -s compressed -w assets/admin/css/search-form.scss assets/admin/css/search-form.css",
+		"watch:frontend": "sass --no-source-map -s compressed -w assets/css/auto-listings.scss assets/css/auto-listings.scss",
+		"watch:css": "npm run watch:admin && npm run watch:frontend",
+		"build:css": "npm run css:admin && npm run css:frontend",
+		"build:js": "node esbuild",
+		"start": "node esbuild"
+	},
+	"devDependencies": {
+		"esbuild": "^0.16.4",
+		"sass": "^1.56.2"
+	},
+	"dependencies": {
+		"@wordpress/element": "^4.20.0",
+		"esbuild-plugin-external-global": "^1.0.1"
+	}
+}
